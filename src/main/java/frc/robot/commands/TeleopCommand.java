@@ -54,7 +54,10 @@ public class TeleopCommand extends CommandBase {
     @Override
     public void execute() {
          double[] sticks = RobotContainer.getInstance().getYAxis();
-         m_drive.tankDrive(sticks[0], sticks[1]);
+         if(Math.abs(sticks[0]) >= 0.1 || Math.abs(sticks[1]) >= 0.1){
+            m_drive.tankDrive(sticks[0], sticks[1]);
+         }
+         
     }
 
     // Called once the command ends or is interrupted.
