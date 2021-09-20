@@ -20,8 +20,10 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public class Constants {
-   public static int leftDrivePort = 0;
-   public static int rightDrivePoint = 1;
+   public static int leftDriveFront = 2;
+   public static int leftDriveBack = 0;
+   public static int rightDriveFront = 3;
+   public static int rightDriveBack = 1;
    public static double deadzone = 0.1;
 }
 
