@@ -40,6 +40,7 @@ public class RobotContainer {
     public final Drive m_drive = new Drive();
     
     public TeleopCommand m_teleopCommand = new TeleopCommand(m_drive);
+    public AutonomousCommand m_autonomousCommand = new AutonomousCommand(m_drive);
 
 // Joysticks
 private final XboxController xinput = new XboxController(0);
@@ -123,7 +124,7 @@ private final XboxController xinput = new XboxController(0);
   */
   public Command getAutonomousCommand() {
     // The selected command will be run in autonomous
-    return m_teleopCommand;
+    return m_autonomousCommand;
   }
   
 
