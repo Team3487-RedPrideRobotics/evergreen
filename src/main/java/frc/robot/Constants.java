@@ -11,6 +11,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Sendable;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants.  This class should not be used for any other purpose.  All constants should be
@@ -22,7 +24,6 @@ package frc.robot;
 public class Constants {
    public static final boolean leftDriveInverted = true;
    public static final boolean rightDriveInverted = true;
-public static final double DriveSpeed = 1;
    public static int leftDrivePort = 0;
    public static int rightDrivePoint = 1;
    public static double deadzone = 0.1;
