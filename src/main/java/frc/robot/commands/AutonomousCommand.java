@@ -54,14 +54,13 @@ public class AutonomousCommand extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        while(true){
             driveSubsystem.tankDrive(1,1);
-        }
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
+        driveSubsystem.tankDrive(0,0);
     }
 
     // Returns true when the command should end.

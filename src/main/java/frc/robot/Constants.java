@@ -22,7 +22,7 @@ package frc.robot;
 public class Constants {
    public static final boolean leftDriveInverted = true;
    public static final boolean rightDriveInverted = true;
-public static final double DriveSpeed = 0.5;
+public static final double DriveSpeed = 1;
    public static int leftDrivePort = 0;
    public static int rightDrivePoint = 1;
    public static double deadzone = 0.1;
