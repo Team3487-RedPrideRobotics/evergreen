@@ -72,7 +72,7 @@ public class Drive extends SubsystemBase {
     // here. Call these from Commands.
 
     public void tankDrive(double left, double right){
-        driveBase.tankDrive(left*Constants.DriveSpeed, right*Constants.DriveSpeed);
+        driveBase.tankDrive(left, right);
     }
 
 }
