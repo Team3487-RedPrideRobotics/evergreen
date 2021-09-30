@@ -11,6 +11,8 @@
 
 package frc.robot;
 
+import java.awt.Color;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants.  This class should not be used for any other purpose.  All constants should be
@@ -28,5 +30,7 @@ public class Constants {
    public static float LightHue = 0.3f;
    public static float LightSat = 0.3f;
    public static double LightSpeed = 0.1;
+   public static Color allianceRedColor = new Color(1f, 0f, 0f);
+   public static Color allianceBlueColor = new Color(0f, 0f, 1f);
 }
 
