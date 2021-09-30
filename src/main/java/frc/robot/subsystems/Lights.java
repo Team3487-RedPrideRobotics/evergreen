@@ -42,15 +42,17 @@ public class Lights extends SubsystemBase {
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
-        int[] rgbarray = HSLtoRGB(Constants.LightHue, Constants.LightSat, Constants.LightLight, Math.abs(Math.sin(timer)*255));
-        setColors(new Color(rgbarray[0], rgbarray[1], rgbarray[2]), Constants.LightBank);
-        timer += Constants.LightSpeed;
     }
 
     @Override
     public void simulationPeriodic() {
         // This method will be called once per scheduler run when in simulation
 
+    }
+    public void LightPulse(){
+        int[] rgbarray = HSLtoRGB(Constants.LightHue, Constants.LightSat, Constants.LightLight, Math.abs(Math.sin(timer)*255));
+        setColors(new Color(rgbarray[0], rgbarray[1], rgbarray[2]), Constants.LightBank);
+        timer += Constants.LightSpeed;
     }
 
     /**
