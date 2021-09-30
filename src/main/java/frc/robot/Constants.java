@@ -20,8 +20,13 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public class Constants {
+   public static final float LightLight = 0.7f;
+   public static final int LightBank = 1;
    public static int leftDrivePort = 0;
    public static int rightDrivePoint = 1;
    public static double deadzone = 0.1;
+   public static float LightHue = 0.3f;
+   public static float LightSat = 0.3f;
+   public static double LightSpeed = 0.1;
 }
 
