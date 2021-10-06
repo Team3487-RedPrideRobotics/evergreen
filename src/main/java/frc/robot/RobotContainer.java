@@ -54,8 +54,6 @@ private final XboxController xinput = new XboxController(0);
   * The container for the robot.  Contains subsystems, OI devices, and commands.
   */
   private RobotContainer() {
-    int[] rgbarray = Lights.HSLtoRGB(Constants.LightHue, Constants.LightSat, Constants.LightLight, 1d);
-    m_lights.setColors(new Color(rgbarray[0], rgbarray[1], rgbarray[2]), Constants.LightBank);
     // Configure the button bindings
     configureButtonBindings();
 
