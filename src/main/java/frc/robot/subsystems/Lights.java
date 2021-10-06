@@ -85,7 +85,7 @@ public class Lights extends SubsystemBase {
     }
 
     public Color getSelectedColor(){
-        if(custom_toggle.getBoolean(true)){
+        if(custom_toggle.getBoolean(false)){
             return new Color((float)custom_red.getDouble(1),(float)custom_green.getDouble(1),(float)custom_blue.getDouble(1));
         }
         if(is_red_alliance.getBoolean(alliance_chooser.getSelected() == "red")){
