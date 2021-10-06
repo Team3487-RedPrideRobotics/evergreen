@@ -12,7 +12,9 @@ package frc.robot.subsystems;
 
 import frc.robot.Constants;
 import frc.robot.commands.*;
+import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
@@ -41,6 +43,7 @@ public class Lights extends SubsystemBase {
     public NetworkTableEntry custom_toggle;
     public NetworkTableEntry alliance_input;
     private SendableChooser alliance_chooser;
+    public NetworkTableEntry is_red_alliance;
 
     public Lights() {
         lightController = new LightDriveCAN();
@@ -48,12 +51,13 @@ public class Lights extends SubsystemBase {
         custom_green = Shuffleboard.getTab("Lights").add("Custom Color Green", 1f).withWidget(BuiltInWidgets.kNumberSlider).withProperties(Map.of("min", 0f, "max", 1f)).getEntry();
         custom_blue = Shuffleboard.getTab("Lights").add("Custom Color Blue", 1f).withWidget(BuiltInWidgets.kNumberSlider).withProperties(Map.of("min", 0f, "max", 1f)).getEntry();
         custom_toggle = Shuffleboard.getTab("Lights").add("Use Custom Color?", true).withWidget(BuiltInWidgets.kToggleSwitch).getEntry();
+        is_red_alliance = NetworkTableInstance.getDefault().getTable("FMSInfo").getEntry("IsRedAlliance");
 
         alliance_chooser = new SendableChooser<String>();
         alliance_chooser.setDefaultOption("Red", "red");
         alliance_chooser.addOption("Blue", "blue");
 
-        Shuffleboard.getTab("Lights").add(alliance_chooser);
+        Shuffleboard.getTab("Lights").add("Alliance Color",alliance_chooser);
     }
 
     @Override
@@ -84,8 +88,8 @@ public class Lights extends SubsystemBase {
         if(custom_toggle.getBoolean(true)){
             return new Color((float)custom_red.getDouble(1),(float)custom_green.getDouble(1),(float)custom_blue.getDouble(1));
         }
-        if(alliance_chooser.getSelected() == "red"){
-            return Constants.allianceRedColor;
+        if(is_red_alliance.getBoolean(alliance_chooser.getSelected() == "red")){
+            System.out.println("displaying red!");
         }
         return Constants.allianceBlueColor;
     }
