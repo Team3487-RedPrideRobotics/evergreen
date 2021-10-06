@@ -27,9 +27,11 @@ public class Constants {
    public static int leftDrivePort = 0;
    public static int rightDrivePoint = 1;
    public static double deadzone = 0.1;
-   public static float LightHue = 0.3f;
-   public static float LightSat = 0.3f;
-   public static double LightSpeed = 0.05;
+   public static float defaultRed = 1f;
+   public static float defaultGreen = 1f;
+   public static float defaultBlue = 1f;
+   public static double LightSpeed = 0.01;
+   public static float MaxBrightness = 1f;
    public static Color allianceRedColor = new Color(1f,0f, 0f);
    public static Color allianceBlueColor = new Color(0f,0f, 1f);
 }

@@ -31,6 +31,8 @@ public class Robot extends TimedRobot {
 
     private RobotContainer m_robotContainer;
 
+    private Command m_idleCommand;
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -65,6 +67,11 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void disabledInit() {
+        m_idleCommand = m_robotContainer.getIdleCommand();
+
+        if(m_idleCommand != null){
+            m_idleCommand.schedule();
+        }
     }
 
     @Override
@@ -76,6 +83,9 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void autonomousInit() {
+        if (m_idleCommand != null) {
+            m_idleCommand.cancel();
+        }
         m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
         // schedule the autonomous command (example)
@@ -93,6 +103,9 @@ public class Robot extends TimedRobot {
 
     @Override
     public void teleopInit() {
+        if (m_idleCommand != null) {
+            m_idleCommand.cancel();
+        }
         // This makes sure that the autonomous stops running when
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
