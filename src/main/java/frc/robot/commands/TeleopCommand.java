@@ -71,7 +71,8 @@ public class TeleopCommand extends CommandBase {
          double[] sticks = new double[] {RobotContainer.getInstance().getYAxis(Hand.kLeft), RobotContainer.getInstance().getYAxis(Hand.kRight)};
         m_drive.tankDrive(sticks[0], sticks[1]);
 
-        m_lights.setColors(m_lights.getSelectedColor(), Constants.LightBank, Constants.MaxBrightness);
+        m_lights.setColors(m_lights.getSelectedColor(), Constants.LightBank1, Constants.MaxBrightness);
+        m_lights.setColors(m_lights.getSelectedColor(), Constants.LightBank2, Constants.MaxBrightness);
     }
 
     // Called once the command ends or is interrupted.

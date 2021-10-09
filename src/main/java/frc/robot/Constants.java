@@ -22,11 +22,12 @@ import java.awt.Color;
  * constants are needed, to reduce verbosity.
  */
 public class Constants {
-   public static final float LightLight = 0.7f;
-   public static final int LightBank = 1;
    public static int leftDrivePort = 0;
    public static int rightDrivePoint = 1;
    public static double deadzone = 0.1;
+
+   public static final int LightBank1 = 1;
+   public static final int LightBank2 = 2;
    public static float defaultRed = 1f;
    public static float defaultGreen = 1f;
    public static float defaultBlue = 1f;

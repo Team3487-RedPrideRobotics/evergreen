@@ -68,7 +68,9 @@ public class BreatheCommand extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_lights.setColors(m_lights.getSelectedColor(), Constants.LightBank, (float)Math.abs(Math.sin(timer)*Constants.MaxBrightness));
+        m_lights.setColors(m_lights.getSelectedColor(), Constants.LightBank1, (float)Math.abs(Math.sin(timer)*Constants.MaxBrightness));
+        m_lights.setColors(m_lights.getSelectedColor(), Constants.LightBank2, (float)Math.abs(Math.sin(timer)*Constants.MaxBrightness));
+
         timer += Constants.LightSpeed;
     }
 
