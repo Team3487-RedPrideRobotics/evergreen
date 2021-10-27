@@ -35,5 +35,6 @@ public class Constants {
    public static float MaxBrightness = 1f;
    public static Color allianceRedColor = new Color(1f,0f, 0f);
    public static Color allianceBlueColor = new Color(0f,0f, 1f);
+   public static Color disconnectedColor = new Color(1f, 0f, 0.7f);
 }
 
