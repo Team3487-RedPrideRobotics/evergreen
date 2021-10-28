@@ -12,6 +12,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Sendable;
+import edu.wpi.first.wpilibj.XboxController.Button;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -24,9 +25,15 @@ import edu.wpi.first.wpilibj.Sendable;
 public class Constants {
    public static final boolean leftDriveInverted = true;
    public static final boolean rightDriveInverted = true;
+   public static final double prototypeSpeed = 0.5;
    public static int leftDrivePort = 0;
    public static int rightDrivePoint = 1;
    public static double driveSpeed = 1;
    public static double deadzone = 0.1;
+
+   public static class ButtonMap{
+      public static final Button PROTOTYPE_RUNFORWARD = Button.kBumperRight; 
+      public static final Button PROTOTYPE_RUNBACK = Button.kBumperLeft; 
+   }
 }
 
