@@ -12,6 +12,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Sendable;
+import edu.wpi.first.wpilibj.util.Units;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -28,5 +29,11 @@ public class Constants {
    public static int rightDrivePoint = 1;
    public static double driveSpeed = 1;
    public static double deadzone = 0.1;
+
+   public static int[] leftEncoderPort = {0, 1};
+   public static int[] rightEncoderPort = {2, 3};
+   public static final double cpr = 360;
+   //The whd value is 0.5 because the whd is in feet (the wheels are 6 inches)
+   public static final double whd = 0.5;
 }
 
