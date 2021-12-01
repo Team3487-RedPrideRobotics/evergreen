@@ -12,6 +12,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Sendable;
+import edu.wpi.first.wpilibj.SerialPort;
+import edu.wpi.first.wpilibj.SPI.Port;
 import edu.wpi.first.wpilibj.util.Units;
 
 /**
@@ -35,5 +37,6 @@ public class Constants {
    public static final double cpr = 360;
    //The whd value is 0.5 because the whd is in feet (the wheels are 6 inches)
    public static final double whd = 0.5;
+   public static final SerialPort.Port AHRS_Port = SerialPort.Port.kUSB;
 }
 
