@@ -10,8 +10,15 @@
     "types": {
       "/FMSInfo": "FMSInfo",
       "/LiveWindow/Drive": "Subsystem",
+      "/LiveWindow/Prototyping": "Subsystem",
       "/LiveWindow/Ungrouped/DifferentialDrive[1]": "DifferentialDrive",
-      "/LiveWindow/Ungrouped/Scheduler": "Scheduler"
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/Shuffleboard/Prototyping/Bumpers": "String Chooser",
+      "/Shuffleboard/Prototyping/Left X": "String Chooser",
+      "/Shuffleboard/Prototyping/Left Y": "String Chooser",
+      "/Shuffleboard/Prototyping/Right X": "String Chooser",
+      "/Shuffleboard/Prototyping/Right Y": "String Chooser",
+      "/Shuffleboard/Prototyping/Triggers": "String Chooser"
     }
   }
 }
