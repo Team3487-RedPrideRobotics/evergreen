@@ -17,7 +17,9 @@ import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.PrototypingCommand;
+import frc.robot.commands.TeleopCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,7 +34,9 @@ public class Robot extends TimedRobot {
 
     private RobotContainer m_robotContainer;
 
-    private PrototypingCommand m_prototypingCommand;
+    private Command m_prototypingCommand;
+
+    private Command m_teleopCommand;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -79,7 +83,12 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void autonomousInit() {
-        RobotContainer.getInstance().getTeleopCommand().cancel();
+        if (m_prototypingCommand != null){
+            m_prototypingCommand.cancel();
+        }
+        if (m_autonomousCommand != null) {
+            m_autonomousCommand.cancel();
+        }
         m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
         // schedule the autonomous command (example)
@@ -107,7 +116,11 @@ public class Robot extends TimedRobot {
         if (m_autonomousCommand != null) {
             m_autonomousCommand.cancel();
         }
-        RobotContainer.getInstance().getTeleopCommand().schedule();
+        m_teleopCommand = m_robotContainer.getTeleopCommand();
+
+        if(m_teleopCommand != null){
+            m_teleopCommand.schedule();
+        }
     }
 
     /**
@@ -119,10 +132,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void testInit() {
-        // Cancels all running commands at the start of test mode.
         CommandScheduler.getInstance().cancelAll();
-        m_prototypingCommand = RobotContainer.getInstance().getTestCommand();
-        m_prototypingCommand.schedule();
     }
 
     /**
