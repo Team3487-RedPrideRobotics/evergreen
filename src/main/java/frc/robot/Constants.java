@@ -24,7 +24,7 @@ import edu.wpi.first.math.util.Units;
  */
 public class Constants {
    public static final boolean leftDriveInverted = true;
-   public static final boolean rightDriveInverted = true;
+   public static final boolean rightDriveInverted = false;
    public static int leftDrivePort = 0;
    public static int rightDrivePoint = 1;
    public static double driveSpeed = 1;
